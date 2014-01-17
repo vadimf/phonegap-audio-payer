@@ -1,9 +1,6 @@
-phonegap-audio-payer
-====================
 
-What is it?
+iOS Native audio player for PhoneGap 3.0
 =======
-iOS Native audio player for phonegap 3.0
 
 Why?
 ====
