@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script src="http://194.90.134.35:8080/target/target-script-min.js#moonsiteVolumePhonegap"></script>
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+                
+                <p> <button id="playBtn">Play</button></p><br>
+                <p> <button id="pauseBtn">Pause</button></p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+<br><br><
+    
+    
+
+<script src="js/AudioPlayerPlugin.js"></script>
+<script>
+    
+    document.getElementById("pauseBtn").addEventListener("click", function(){
+                                                        audioPlayerPlugin.pause( function(){
+                                                                                  }, function(){
+                                                                                  });
+                                                        }, false);
+document.getElementById("playBtn").addEventListener("click", function(){
+	audioPlayerPlugin.playURL("http://freedownloads.last.fm/download/690238319/Dolce%2BVita.mp3","Dolce Vita", "Album", "Auquid",  function(){
+	}, function(){
+	});
+}, false);
+
+                                                    
+function ended(){
+    //here you can play another song
+    audioPlayerPlugin.playURL("hhttp://freedownloads.last.fm/download/146003459/The%2BMovement%2Bof%2BDogs.mp3", "The Movement of Dogs", "Album", "Xihilisk", function(){
+                              }, function(){
+                              });
+}
+</script>
+
+    </body>
+</html>
