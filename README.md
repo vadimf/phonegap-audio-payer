@@ -1,5 +1,10 @@
 phonegap-audio-payer
 ====================
+
+What is it?
+=======
+iOS Native audio player for phonegap 3.0
+
 Why?
 ====
 Working on a phonegap radio application we noticed that when the application is running in background mode the songs are not alsways skipped with HTML5 radio player. 
