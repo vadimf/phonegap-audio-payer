@@ -1,56 +1,68 @@
+# iOS Native Audio Player Plugin for PhoneGap 3.0
 
-iOS Native audio player for PhoneGap 3.0
-=======
+This plugin was developed by **Globalbit**, an Israeli software company specializing in complex digital systems and cross-platform mobile solutions.  
+It provides a native audio playback solution for PhoneGap 3.0, enabling seamless background music playback with lock screen metadata support — overcoming the limitations of HTML5 audio on iOS.
 
-Why?
-====
-Working on a phonegap radio application we noticed that when the application is running in background mode the songs are not alsways skipped with HTML5 radio player. 
-Which is quite understandable - this is what you find in apple documentation: <blockquote>As long as it is playing audio or video content or recording audio content, the app continues to run in the background. However, if recording or playback stops, the system suspends the app.</blockquote>
+---
 
-CDVSound audio plugin introduced serious lags, so we decided to develop a simple plugin that solves three issues:
-<ul>
-<li>Playlists can be played in background</li>
-<li>Song title, artist, etc is shown on iPhone lock screen</li>
-<li>There are no lags (or they are minimal)</li>
-</ul>
+## 🎯 Why This Plugin?
 
-Feel free to fork and improve.
+While building a mobile radio app using PhoneGap, we encountered three key limitations:
 
-Installation
-=============
-Add the following frameworks to your project:
-<ul>
-<li>AVFoundation.framework</li>
-<li>CoreAudio.framework</li>
-<li>MediaPlayer.framework</li>
-<li>AudioToolbox.framework</li>
-</ul>
+- ❌ HTML5 audio stops reliably working in background mode
+- ❌ iOS system suspends the app if playback is interrupted
+- ❌ CDVSound (default audio plugin) introduced unacceptable latency
 
-Add the following lines to your info.plist file:
+### ✅ This plugin enables:
 
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-	</array>
+- 🔊 Continuous **playlist playback** in background mode
+- 🔒 **Lock screen metadata** (song title, artist, etc.)
+- ⚡ Minimal latency for smooth playback transitions
 
-	
-Add AudioPlayerPlugin.js to /www/js folder.
-	
-Add the following lines to your confix.xml file:
-`  <feature name="AudioPlayerPlugin">
-    <param name="ios-package" value="AudioPlayerPlugin" />
-  </feature>`
-  
-Add the following files into your XCode project:
+---
 
-<ul>
-<li>AudioPlayerPlugin.m</li>
-<li>AudioPlayerPlugin.h</li>
-<li>GBAudioPlayer.m</li>
-<li>GBAudioPlayer.h</li>
-</ul>
+## ⚙️ Installation
 
-Usage
-=====
+1. **Add iOS Frameworks** to your Xcode project:
+   - `AVFoundation.framework`
+   - `CoreAudio.framework`
+   - `MediaPlayer.framework`
+   - `AudioToolbox.framework`
 
-Check index.html file for the code example.
+2. **Update `Info.plist`:**
+```xml
+<key>UIBackgroundModes</key>
+<array>
+  <string>audio</string>
+</array>
+Include plugin files in your project:
+AudioPlayerPlugin.m
+AudioPlayerPlugin.h
+GBAudioPlayer.m
+GBAudioPlayer.h
+Add JS bridge:
+Place AudioPlayerPlugin.js inside /www/js/
+Update config.xml:
+<feature name="AudioPlayerPlugin">
+  <param name="ios-package" value="AudioPlayerPlugin" />
+</feature>
+🚀 Usage
+
+See the index.html file in the repository for a working code example.
+Initialize the plugin, load your playlist, and enjoy reliable background audio playback on iOS devices.
+
+🧩 About Globalbit
+
+Globalbit is a leading Israeli software development company that delivers robust, scalable web mobile and AI solutions to enterprises, governments, and startups.
+We’ve built platforms used by over 200 million users across industries like finance, mobility, healthcare, and media.
+
+🔍 What We Do:
+Native & hybrid mobile app development (iOS, Android, Flutter, React Native)
+Web platforms, digital portals, enterprise integrations
+Agentic AI, cloud infrastructure, DevOps, QA
+📞 Let’s Build Digital Together
+
+This plugin is one example of Globalbit’s focus on low-level performance, native integration, and real-world functionality in mobile environments.
+
+📩 Contact: info@globalbit.co.il
+🌐 Website: globalbit.co.il
